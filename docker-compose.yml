@@ -1,0 +1,19 @@
+version: '3'
+services:
+    app:
+        image: "abiosoft/caddy:latest"
+        restart: always
+        networks:
+            - net
+        ports:
+            - "80:80"
+            - "443:443"
+        volumes:
+            - "./Caddyfile:/etc/Caddyfile"
+            - "./certs:/etc/caddycerts"
+            - "./www:/srv/www"
+        environment:
+            - "CADDYPATH=/etc/caddycerts"
+
+networks:
+    net:

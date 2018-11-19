@@ -1,0 +1,7 @@
+## Example
+# example.com { # domain.tld
+#    proxy / remote.server:80 { # destination:port
+#        transparent
+#        websocket
+#    }
+#}
